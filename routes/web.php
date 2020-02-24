@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +14,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/add', 'Admin\NewsController@add')->middleware('auth');
-    Route::get('news/samary', 'Admin\NewsController@index')->middleware('auth');
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+     Route::get('news/add', 'Admin\NewsController@add');
+     Route::get('news/samary', 'Admin\NewsController@index');
+     Route::get('news/create', 'Admin\NewsController@add');
+     Route::post('news/create', 'Admin\NewsController@create'); 
+     Route::get('news/impression', 'Admin\NewsController@impression');
+    
 });
 Auth::routes();
 

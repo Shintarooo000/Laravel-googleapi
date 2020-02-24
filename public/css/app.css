@@ -658,6 +658,9 @@ pre code {
   margin-right: -15px;
   margin-left: -15px;
 }
+.row h2,h3{
+  font-size:18px;
+}
 
 .no-gutters {
   margin-right: 0;
@@ -1834,6 +1837,7 @@ pre code {
 .table-bordered th,
 .table-bordered td {
   border: 1px solid #dee2e6;
+  font-size: 10px;
 }
 
 .table-bordered thead th,
