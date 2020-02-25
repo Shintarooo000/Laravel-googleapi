@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Yu Gothic";
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -1807,6 +1807,7 @@ pre code {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
+  font-size: 12px;
 }
 
 .table th,
@@ -8805,6 +8806,7 @@ button.bg-dark:focus {
 .ml-auto,
 .mx-auto {
   margin-left: auto !important;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 576px) {
@@ -10885,6 +10887,9 @@ a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6;
+  }
+  .boxleft{
+    margin-bottom:10px;
   }
 }
 

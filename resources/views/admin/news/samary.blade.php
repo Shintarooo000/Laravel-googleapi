@@ -6,24 +6,28 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-10 mx-auto">
+            <div class="col-md-10 mx-auto boxleft">
                 <h2>月間サマリーレポート</h2>
+             <div class="col-md-6 boxleft">
+               <a href="{{ action('Admin\NewsController@impression') }}" role="button" class="btn btn-primary">所感一覧へ</a>
+               <a href="{{ action('Admin\NewsController@add') }}" role="button" class="btn btn-primary">所感作成</a>
+             </div>
             </div>
         </div>
          <div class="row">
             <div class="col-md-10 mx-auto">
                 <div class="month-table">
-                  <table class="table table-bordered">
-                     <tr>
-                        <th>月間</th>
-                        <th>セッション</th>
-                        <th>ユーザー</th>
-                        <th>新規ユーザー</th>
-                        <th>ページビュー数</th>
-                        <th>ページ/セッション</th>
-                        <th>平均セッション時間(秒)</th>
-                        <th>CVR</th>
-                        <th>CV</th>
+                  <table class="table table-hover table-bordered">
+                     <tr class="table-primary">
+                        <th class="table-primary">月間</th>
+                        <th class="table-primary">セッション</th>
+                        <th class="table-primary">ユーザー</th>
+                        <th class="table-primary">新規ユーザー</th>
+                        <th class="table-primary">ページビュー数</th>
+                        <th class="table-primary">ページ/セッション</th>
+                        <th class="table-primary">平均セッション時間(秒)</th>
+                        <th class="table-primary">CVR</th>
+                        <th >CV</th>
                      </tr>
                     @foreach ($rows as $value)
                       <tr>
@@ -42,14 +46,14 @@
                     <h3>前月比較</h3>
                     <table class="table table-bordered" >
                      <tr>
-                        <th>セッション</th>
-                        <th>ユーザー</th>
-                        <th>新規ユーザー</th>
-                        <th>ページビュー数</th>
-                        <th>ページ/セッション</th>
-                        <th>平均セッション時間(秒)</th>
-                        <th>CVR</th>
-                        <th>CV</th>
+                        <th class="table-primary">セッション</th>
+                        <th class="table-primary">ユーザー</th>
+                        <th class="table-primary">新規ユーザー</th>
+                        <th class="table-primary">ページビュー数</th>
+                        <th class="table-primary">ページ/セッション</th>
+                        <th class="table-primary">平均セッション時間(秒)</th>
+                        <th class="table-primary">CVR</th>
+                        <th class="table-primary">CV</th>
                      </tr>
                      <tr>
                      @for ($i = 1; $i < count($lastMonth); $i++)
@@ -64,14 +68,14 @@
                     <h3>前年比較</h3>
                     <table class="table table-bordered" >
                      <tr>
-                        <th>セッション</th>
-                        <th>ユーザー</th>
-                        <th>新規ユーザー</th>
-                        <th>ページビュー数</th>
-                        <th>ページ/セッション</th>
-                        <th>平均セッション時間(秒)</th>
-                        <th>CVR</th>
-                        <th>CV</th>
+                        <th class="table-primary">セッション</th>
+                        <th class="table-primary">ユーザー</th>
+                        <th class="table-primary">新規ユーザー</th>
+                        <th class="table-primary">ページビュー数</th>
+                        <th class="table-primary">ページ/セッション</th>
+                        <th class="table-primary">平均セッション時間(秒)</th>
+                        <th class="table-primary">CVR</th>
+                        <th class="table-primary">CV</th>
                      </tr>
                     <tr>
                      @for ($i = 1; $i < count($lastYear); $i++)

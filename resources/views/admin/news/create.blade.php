@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>今月の振り返り</h2>
+                <br>
                 <form action="{{ action('Admin\NewsController@create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
@@ -34,7 +35,11 @@
                         </div>
                     </div>
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <div class="col-md-6">
+                        <input type="submit" class="btn btn-primary" value="更新">
+                        <a href="{{ action('Admin\NewsController@impression') }}" role="button" class="btn btn-primary">所感一覧へ</a>
+                        <a href="{{ action('Admin\NewsController@index') }}" role="button" class="btn btn-primary">全体サマリーへ</a>
+                    </div>
                 </form>
             </div>
         </div>
