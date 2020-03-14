@@ -28,8 +28,13 @@ class NewsController extends Controller
     {
         $client = AnalyticsClientFactory::createForConfig(config('analytics'));
         $ga     = new Analytics($client, config('analytics.view_id'));
+        $periodYear = Period::years(1);
+        //開始と終了の日付をカスタマイズ
+        $periodYear->startDate->modify("first day of -1 months");
+        $periodYear->endDate->modify("last day of -1 months");
+        
         $analytics = $ga->performQuery (
-            Period::years(1),
+            $periodYear,
             'ga:sessions, ga:users, ga:newUsers, ga:pageviews, ga:pageviewsPerSession, ga:avgSessionDuration, ga:goalConversionRateAll, ga:goalCompletionsAll ga:yearMonth,', 
             [
                 'metrics' => 'ga:sessions, ga:users, ga:newUsers, ga:pageviews, ga:pageviewsPerSession, ga:avgSessionDuration, ga:goalConversionRateAll, ga:goalCompletionsAll',
